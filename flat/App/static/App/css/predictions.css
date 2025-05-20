@@ -1,0 +1,91 @@
+body {
+    background-image: url("../images/back2.jpg");
+
+}
+
+.bar {
+    height: 500px;
+
+    margin-top: 220px; 
+    margin-left: 50px; 
+    margin-right: 50px; 
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding-left: 50px; 
+    box-shadow: 
+    0 -10px 5px rgba(0,0,0,0.2), 
+    0 10px 5px rgba(0,0,0,0.2),   
+    -5px 0 10px rgba(0,0,0,0.2),    
+    5px 0 10px rgba(0,0,0,0.2);     
+    z-index: 1000; 
+    border-radius: 30px; 
+    border: 2px solid rgba(0, 0, 0, 0.01);
+    backdrop-filter: blur(5px); 
+}
+
+p {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 1.5rem;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.input-fields {
+    border: none;              
+    border-bottom: 2px solid #000; 
+    outline: none;              
+    background: transparent;    
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.btn2 {
+    position: fixed;
+    top: 400px;
+    left: 1300px;
+}
+
+.btn3 {
+    position: fixed;
+    top: 400px;
+    left: 100px;
+}
+
+.btn {
+    background-color: black;  
+    color: white;           
+    padding: 15px 30px;      
+    border: none;            
+    border-radius: 5px;      
+    cursor: pointer;         
+    font-size: 1.3rem;        
+    border-radius: 30px;
+}
+
+.btnб {
+    transition: all 0.3s ease; 
+  }
+  
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.3); 
+    transform: translateY(-5px);
+}
+.btn:active {
+    transform: translateY(0); 
+}
+
+.result {
+    position: fixed;
+    left: 500px;
+    top: 370px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 30px;
+}
+h3 {
+    font-size: 1.8rem;
+}

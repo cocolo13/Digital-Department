@@ -1,0 +1,68 @@
+{% load static %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогнозирование стоимости квартиры</title>
+    <link rel="stylesheet" href="{% static 'App/css/predictions.css' %}">
+</head>
+<body>
+    <form method="POST" action="{% url 'pred' %}">
+        {% csrf_token %}
+        <div class="bar">
+            <div class="btn1">
+                <p>Общая площадь квартиры (м²)</p>
+                <input class="input-fields" type="text" name="total_area" 
+                       value="{{ form_data.total_area|default:'' }}" required>
+            </div>
+
+            <div class="btn1">
+                <p>Жилая площадь (м²)</p>
+                <input class="input-fields" type="text" name="living_area" 
+                       value="{{ form_data.living_area|default:'' }}" required>
+            </div>
+            
+            <div class="btn1">
+                <p>Этаж</p>
+                <input class="input-fields" type="text" name="floor" 
+                       value="{{ form_data.floor|default:'' }}" required>
+            </div>
+
+            <div class="btn1">
+                <p>Год постройки</p>
+                <input class="input-fields" type="text" name="built_year" 
+                       value="{{ form_data.built_year|default:'' }}" required>
+            </div>
+
+            <div class="btn1">
+                <p>Район</p>
+                <select class="input-fields" name="district" required>
+                    <option value="">Выберите район...</option>
+                    {% for value, label in districts %}
+                        <option value="{{ value }}" 
+                                {% if form_data.district == value %}selected{% endif %}>
+                            {{ label }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="btn2">
+                <button type="submit" class="btn">Рассчитать</button>
+            </div>
+
+            {% if prediction %}
+            <div class="result">
+                <h3>Стоимость вашей квартиры: {{ prediction|floatformat:2|intcomma }} ₽</h3>
+            </div>
+            {% endif %}
+
+            <div class="btn3">
+                <a href="{% url 'base' %}"><button type="button" class="btn">Назад</button></a>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

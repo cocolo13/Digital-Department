@@ -1,0 +1,28 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flat-krsk</title>
+    <link rel="stylesheet" href="{% static 'App/css/style.css' %}">
+</head>
+<body>
+    
+    <div class="top-bar">
+        <a href="#"><img src="{% static 'App/images/logo.png' %}" alt="Логотип" class="logo"></a>
+        <a href="https://github.com/cocolo13/Digital-Department" target="_blank" class="story">О проекте</a>
+    </div>
+    <div class="label">
+        <div class="label-background">
+            <h2>Рассчитай стоимость<br>своей квартиры</h2>
+        </div>
+
+
+    </div>
+    <div class="button-container">
+        <a href="{% url 'pred'%}"><button class="btn">Рассчитать стоимость</button></a>
+
+    </div>
+</body>
+</html>
